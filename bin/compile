@@ -73,4 +73,7 @@ mkdir -p $BUILD_DIR/bin
 cp "$BUILDPACK_DIR/bin/start-pgbouncer-stunnel" $BUILD_DIR/bin/
 chmod +x $BUILD_DIR/bin/start-pgbouncer-stunnel
 
+mkdir -p $build/.profile.d
+echo 'PATH="$BUILD_DIR/$VENDORED_STUNNEL/bin:$PATH"' > $build/.profile.d/pgbouncer.sh
+
 echo "-----> pgbouncer/stunnel done"
